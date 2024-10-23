@@ -1,0 +1,128 @@
+/******************************************************************************
+
+ You and your friends Don and Glenn have an argument about which of your three cars is the best.
+To settle this, you decide to use your programming skills, so: create a struct(ure) named
+carInstance, which has following structure members:
+- maxSpeed: which is used to store car’s maximum speed
+- maxRPM: which is used to store car’s maximum RPM
+- torque: which is used to store car’s torque
+- horsepower: which is used to store car’s horsepower
+- numberOfGears: : which is used to store car’s number of gears
+Then in code create three instances of carInstance, for you and each of your friends. Create then
+function(s) that would print to console, which of the three cars is best for a specific category (struct
+member).
+
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+struct carInstance
+{
+  int maxSpeed;
+  int maxRPM;
+  int torque;
+  int horsepower;
+  int numberOfGears;
+};
+
+int max(int n1, int n2, int n3)
+{
+
+  if (n1 >= n2 && n1 >= n3)
+    return 0;
+  if (n2 >= n1 && n2 >= n3)
+    return 1;
+  if (n3 >= n1 && n3 >= n2)
+    return 2;
+}
+
+void display(struct carInstance a, struct carInstance b,struct carInstance c) {
+    
+   printf("\nKdo ima najhitrejsi avto\n");
+   int kdo = max(a.maxSpeed,b.maxSpeed,c.maxSpeed);
+   if (kdo == 0)
+        {printf("Jst");}
+    if (kdo == 1)
+        {printf("Don");}
+    if (kdo == 2)
+        {printf("Glenn");}
+    printf("\n\n");
+    
+    printf("\nKdo ima avto z najvec RPM\n");
+    kdo = max(a.maxRPM,b.maxRPM,c.maxRPM);
+   if (kdo == 0)
+        {printf("Jst");}
+    if (kdo == 1)
+        {printf("Don");}
+    if (kdo == 2)
+        {printf("Glenn");}
+    printf("\n\n");
+    
+        printf("\nKdo ima avto z  najvec navora\n");
+    kdo = max(a.torque,b.torque,c.torque);
+   if (kdo == 0)
+        {printf("Jst");}
+    if (kdo == 1)
+        {printf("Don");}
+    if (kdo == 2)
+        {printf("Glenn");}
+    printf("\n\n");
+    
+           printf("\nKdo ima avto z  najvec konjskih moci\n");
+    kdo = max(a.horsepower,b.horsepower,c.horsepower);
+   if (kdo == 0)
+        {printf("Jst");}
+    if (kdo == 1)
+        {printf("Don");}
+    if (kdo == 2)
+        {printf("Glenn");}
+    printf("\n\n");
+    
+               printf("\nKdo ima avto z  najvecjim st prestav\n");
+    kdo = max(a.numberOfGears,b.numberOfGears,c.numberOfGears);
+   if (kdo == 0)
+        {printf("Jst");}
+    if (kdo == 1)
+        {printf("Don");}
+    if (kdo == 2)
+        {printf("Glenn");}
+    printf("\n\n");
+   
+   
+   
+}
+
+
+
+
+
+int
+main ()
+{
+  struct carInstance jst, Don, Glenn;
+
+
+  jst.maxSpeed = 200;
+  jst.maxRPM = 2000;
+  jst.torque = 200;
+  jst.horsepower = 300;
+  jst.numberOfGears = 6;
+
+  Don.maxSpeed = 300;
+  Don.maxRPM = 5000;
+  Don.torque = 100;
+  Don.horsepower = 200;
+  Don.numberOfGears = 5;
+
+  Glenn.maxSpeed = 100;
+  Glenn.maxRPM = 3000;
+  Glenn.torque = 500;
+  Glenn.horsepower = 400;
+  Glenn.numberOfGears = 4;
+
+  display(jst, Don, Glenn);
+
+
+  return 0;
+}

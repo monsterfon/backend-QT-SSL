@@ -1,0 +1,11 @@
+﻿  Reading Qt configuration (C:/qt/6.6.0/msvc2019_64/bin/qmake)
+  moc Client.h
+  Client.cpp
+  main.cpp
+C:\Users\user\source\repos\SSLclient\SSLclient\main.cpp(17,53): error C2661: 'ClientExample::ClientExample': no overloaded function takes 3 arguments
+  C:\Users\user\source\repos\SSLclient\SSLclient\main.cpp(17,53):
+  while trying to match the argument list '(QString, QString, QString)'
+  
+C:\Users\user\source\repos\SSLclient\SSLclient\Client.cpp(13,17): error C2065: 'xmlContent': undeclared identifier
+C:\Users\user\source\repos\SSLclient\SSLclient\Client.cpp(14,5): error C2612: trailing 'identifier' illegal in base/member initializer list
+C:\Users\user\source\repos\SSLclient\SSLclient\Client.cpp(120,1): error C1004: unexpected end-of-file found

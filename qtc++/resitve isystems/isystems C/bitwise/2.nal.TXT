@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Create functions that will change state of multiple bits in parameter value that are set in mask
+parameter:
+- setBits: takes two parameters: integer value and mask where bits with value 1 should be
+set in passed value. Function returns modified value.
+- clearBits: takes two parameters: integer value and mask where bits with value 1 should
+be cleared in passed value. Function returns modified value.
+- flipBits: takes two parameters: integer value and mask where bits with value 1 should be
+flipped (0->1 or 1->0, based on original value). Function returns modified value.
+
+Example of what functions should return:
+newVal = setBits(0x100, 0x101); // newVal should be 0x101
+newVal = clearBits(0x116, 0x022); // newVal should be 0x114
+newVal = flipBits(0x316, 0x111); // newVal should be 0x207
+
+*******************************************************************************/
+
+
+#include <stdio.h>
+
+int setBits(unsigned int data,unsigned int data2)
+{
+    return (data|data2);
+}
+
+int clearBits(unsigned int data,unsigned int data2)
+{
+    return (data & ~(data2));
+}
+
+int flipBits(unsigned int data,unsigned int data2)
+{
+    return (data ^=  data2);
+}
+
+int main()
+{
+    unsigned int cData=0x100;
+    unsigned int cData2 =0x101;
+    printf("setBits");
+    printf("cData = 0x%x\n",cData);
+    unsigned int cData3 = setBits(cData,cData2);
+    printf("cData2 bo = 0x%x.  cData bo = 0x%x.   cData3 bo = 0x%x\n\n\n",cData2,cData,cData3);
+    // rezultat je pravilen 0x101
+    
+    cData=0x116;
+    cData2 =0x022;
+    printf("clearBits");
+    printf("cData = 0x%x\n",cData);
+    cData3 = clearBits(cData,cData2);
+    printf("cData2 bo = 0x%x.  cData bo = 0x%x.   cData3 bo = 0x%x\n\n\n",cData2,cData,cData3);
+    // rezultat je pravilen 0x114
+    
+     cData=0x316;
+    cData2 =0x111;
+    printf("flipBits");
+    printf("cData = 0x%x\n",cData);
+    cData3 = flipBits(cData,cData2);
+    printf("cData2 bo = 0x%x.  cData bo = 0x%x.   cData3 bo = 0x%x\n\n\n",cData2,cData,cData3);
+    // rezultat je pravilen 0x207
+    return 0;
+}

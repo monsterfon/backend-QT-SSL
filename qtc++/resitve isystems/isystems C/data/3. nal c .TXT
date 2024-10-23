@@ -1,0 +1,16 @@
+/******************************************************************************
+
+In your project you have a variable named g_dwCarSpeed, and you wish to print its value out via
+console. Will below code successfully print it out? If not, correct it.
+printf(“Current car speed is %d\n”, &g_dwCarSpeed);
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{   
+    int g_dwCarSpeed = 100;
+    //printf(“Current car speed is %d\n”, &g_dwCarSpeed);
+    printf("Current car speed is %d\n", g_dwCarSpeed);
+    return 0;
+}

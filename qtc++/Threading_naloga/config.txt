@@ -1,0 +1,2 @@
+thr1Timerm_ms=200
+thr2Timerm_ms=200

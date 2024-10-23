@@ -1,0 +1,10 @@
+/******************************************************************************
+
+(Bonus) Does a pointer variable that points to a pointer variable that points to a data variable
+(double pointer) makes sense to use? If yes, name one use case.
+
+*******************************************************************************/
+
+//Eden od razlogov je, da želm spremenit vrednost kazalca,
+//na primer posredovanega funkciji kot argument funkcije
+//za to potrebujete kazalec na kazalec.

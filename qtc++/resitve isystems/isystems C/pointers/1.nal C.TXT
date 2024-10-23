@@ -1,0 +1,23 @@
+/******************************************************************************
+
+Create an integer variable named myInt and initialize it to value 25. 
+Create a pointer to an integer variable named pMyInt and initialize it in a way it would point to the address of variable
+myInt. 
+Change the value of myInt to 52, by using only the pMyInt variable.
+In the end verify correctness by printing out the console value of myInt and the value at the address stored in
+pMyInt. Both should be 52.
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int myInt = 25;
+    int *pMyInt;
+    pMyInt = &myInt;
+    *pMyInt = 52;
+    printf("myInt: %d \n",myInt);
+    printf("pMyInt: %d",*pMyInt);
+    return 0;
+}

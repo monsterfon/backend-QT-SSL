@@ -1,0 +1,26 @@
+/******************************************************************************
+
+Johnny has an embedded device with 4 kB of dedicated memory for storing data and variables. He
+is not so economic with variable types in his code and compiler says:
+Error: 4kB of dedicated data memory is overflown by 8 bytes
+Now he needs to optimise his code (or variable sizes), so he turns to you for help and immediately
+you see that he has following variables in code:
+unsigned int dwMyCarSpeed; // my car maximum speed is 200 km/h
+unsigned long long qwMyCarRPM; // my car maximum RPM is 6000
+How can you change variable types so that code will compile for Johnny (take up at least 8 bytes
+less of memory)?
+
+*******************************************************************************/
+
+
+
+//unsigned int dwMyCarSpeed; 
+// my car maximum speed is 200 km/h
+// Uporabimo unsigned char, ker ima maksimum 255
+//unsigned char dwMyCarSpeed;
+//privarčevali smo 3 byte
+
+//unsigned long long qwMyCarRPM; 
+// my car maximum RPM is 6000
+//Uporabimo unsigned short, ker ima maksimum 65,535
+//s tem privarčujemo 6 Bytov

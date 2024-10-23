@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdint.h>
+
+
+
+
+typedef struct {
+    uint32_t OCTP : 8;
+    uint32_t MCUEN : 4;
+    uint32_t MCUCTL : 4;
+    uint32_t PLLCTL : 8;
+    uint32_t PLLEN : 8;
+} SYS_CTRL1;
+
+
+
+
+
+
+
+int main()
+{   
+    SYS_CTRL1 SYS_CTRL;
+    SYS_CTRL.MCUCTL = 0x1;
+    
+ 
+
+    printf("Vpisal sem = 0x%x\n",SYS_CTRL.MCUCTL);
+    
+    
+    return 0;
+}

@@ -1,0 +1,22 @@
+/******************************************************************************
+
+Using standard C (no non-standard libraries), store the string “Today is a sunny day” in variable
+myString and print it out with printf.
+(Bonus) How do C libraries or functions know when “string” ends? E.g. Why doesn’t printf just go
+further in memory and start printing out characters that are in memory after myString?
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    char myString[] = "Today is a sunny day";
+
+    printf("%s", myString);
+    //How do C libraries or functions know when “string” ends? 
+    // Why doesn’t printf just go further
+    
+    //Na koncu je čuvaj nula
+    //  '\0'
+    return 0;
+}

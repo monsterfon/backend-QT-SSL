@@ -1,0 +1,74 @@
+import json
+import os
+import sys
+from sys  import exc_info
+
+
+
+
+
+def hondaread5000(file_path):
+    try:
+        content_array = []
+        with open(file_path, 'r') as f:
+            data = f.read()
+            obj = json.loads(data)
+            pass
+            result = open("result.txt", "w+")
+
+            for person in obj:
+                if person['bank'].lstrip('$') == person['bank']:
+                    print( "Manjkajoč znak $ Pri osebi št",person['id'])
+                    print("")
+
+                if (str(person["car_make"]).lower() == "honda"):
+                    if (float(person['bank'].lstrip('$')) >= 5000):
+                        try:
+                            result.writelines("\n=====================================")
+                            result.writelines("\nID: " +  str(int(person['id']))    )
+                            result.writelines("\nName: " + str(person['first_name']))
+                            result.writelines("\nSurname: " + str(person['last_name']))
+                            result.writelines("\nEmail: " + str(person['email']))
+                            result.writelines("\nGender: " + str(person['gender']))
+                            result.writelines("\nBank state in USD: " + str(float(person['bank'].lstrip('$')))   )
+                        except Exception as e:
+
+                            print(exc_info()[0])
+                            print("id number of problematic person: ", person['id'])
+                            input("ERROR (Record is corrupt)  " + str(e) + "\n Klikni enter za naprej")
+
+            result.close()
+    except ValueError:
+        input("ERROR: pri branju (Json file corrupt predvidoma)  " + file_path + "\n Klikni enter za naprej")
+        print("")
+    except Exception as e:
+        print(exc_info()[0])
+        input("ERROR honda5000  " + str(e) + "\n Klikni enter za naprej")
+
+
+
+def fname_search():
+    content_array = []
+    while True:
+        print("Shift + desni klik + copy as path")
+        print("ko, si napisal vse poti napisi N")
+        file_path = input("Napisi pot do datoteke data task json:\n\n")
+        file_name = os.path.basename(file_path)
+        if file_path in ['n', 'N', 'No', 'NO', 'nO']:
+            return content_array
+        file_path = file_path.rstrip('\"').lstrip('\"')
+        # če uporabnik ni vnesel path basename funkcija vrne kar string sam
+        if (file_path == file_name):
+            print("Napacno napisana pot.")
+        else:
+            print("Pravilna pot.")
+            content_array.append(file_path)
+
+
+
+
+
+file_names = fname_search()
+
+for file_path in file_names:
+    hondaread5000(file_path)

@@ -1,0 +1,24 @@
+/******************************************************************************
+
+Observe below C code:
+
+*******************************************************************************/
+#include <stdio.h>
+
+
+
+
+int main()
+{   
+    unsigned char myChar = 0;
+    myChar--;
+    //a. What is the value of myChar variable after execution of above code?
+    //b. Can you explain why it has such value?
+    printf("myChar: %d \n",myChar);
+    //KROZNI BUFFER 
+    //ker je UNSIGNED 0 nima negativnih stevil
+    //ker je char je max 255
+    
+   
+    return 0;
+}

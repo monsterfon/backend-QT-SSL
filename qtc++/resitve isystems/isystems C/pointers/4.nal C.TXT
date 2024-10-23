@@ -1,0 +1,25 @@
+/******************************************************************************
+
+(Bonus) In the C programming language different data types take up different sizes in memory to
+hold values. For example char and int, generally take up 1 and 4 bytes respectively in a 32-bit
+system.
+- Can the same be said for pointer variables (e.g. size of pointer to int vs pointer to char)?
+- How about pointer variable sizes in 32-bit or 64-bit systems, are those the same?
+
+*******************************************************************************/
+#include <stdio.h>
+
+
+
+
+int main()
+{   
+    //Za 32 bitni racunalnik je pointer vedno 4 byte
+    //Za 64 bitni racunalnik je pointer vedno 8 bytov
+    //ne glede na int ali char
+
+
+    
+   
+    return 0;
+}

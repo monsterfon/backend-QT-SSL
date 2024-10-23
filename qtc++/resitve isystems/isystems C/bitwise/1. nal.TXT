@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Create functions that will change state of single bit in parameter value:
+- setBit: takes two parameters: integer value and index of bit that should be set. Function
+returns modified value with specified bit set to 1.
+- clearBit: takes two parameters: integer value and index of bit that should be cleared.
+Function returns modified value with specified bit cleared to 0.
+- flipBit: takes two parameters: integer value and index of bit that should be flipped (0->1
+or 1->0, based on original value). Function returns modified value with specified bit flipped.
+Example of what functions should return:
+newVal = setBit(0x100, 1); // newVal should be 0x102
+newVal = clearBit(0x116, 1); // newVal should be 0x114
+newVal = flipBit(0x316, 8); // newVal should be 0x216
+newVal = flipBit(0x216, 8); // newVal should be 0x316
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int setBit(unsigned int data,unsigned int pos)
+{
+    return (data|(1 << pos));
+}
+
+int clearBit(unsigned int data,unsigned int pos)
+{
+    return (data & ~(1 << pos));
+}
+
+int flipBit(unsigned int data,unsigned int pos)
+{
+    return (data ^= 1 << pos);
+}
+
+int main()
+{
+    unsigned int cData=0x100;
+    unsigned int pos =1;
+    printf("cData = 0x%x\n",cData);
+    cData = setBit(cData,pos);
+    printf("%d-i Bit bo  1. cData bo = 0x%x\n\n\n",pos,cData);
+    // rezultat je pravilen 0x102
+    
+    
+    cData=0x116;
+    pos =1;
+    printf("cData = 0x%x\n",cData);
+    cData = clearBit(cData,pos);
+    printf("%di Bit bo  0. cData bo = 0x%x\n\n\n",pos,cData);
+    // rezultat je pravilen 0x114
+
+    cData=0x316;
+    pos =8;
+    printf("cData = 0x%x\n",cData);
+    cData = flipBit(cData,pos);
+    printf("%di Bit bo  flipnjen. cData bo = 0x%x\n\n\n",pos,cData);
+    // rezultat je pravilen 0x216
+    
+    cData = flipBit(cData,pos);
+    printf("%di Bit bo  flipnjen. cData bo = 0x%x\n\n\n",pos,cData);
+    // rezultat je pravilen 0x316
+    return 0;
+}

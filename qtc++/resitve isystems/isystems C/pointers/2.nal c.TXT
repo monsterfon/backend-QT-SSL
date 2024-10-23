@@ -1,0 +1,46 @@
+/******************************************************************************
+
+In the main function, declare an integer variable named myInt and initialize it to value 42. 
+Create
+two additional functions:
+
+- Function incrementInt that returns nothing and takes integer as parameter, increments
+parameter by 2 and prints it out (after increment)
+
+- Function incrementIntPtr that returns nothing and takes pointer to integer as a
+parameter, increments pointer value by 2 and prints value out (after increment)
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int incrementInt(int asdf){
+  asdf = asdf + 1;
+  return 0;
+}
+
+int incrementIntPtr(int *asdf){
+  *asdf = *asdf + 2;
+  return 0;
+}
+
+
+int main()
+{
+    int myInt = 42;
+    int *pMyInt;
+    pMyInt = &myInt;
+    
+    //z pointerjem ne moremo dejansko  spremenimo spremenljivko, ker
+    //spreminjamo kar je lokalno na MyInt v funkciji
+    incrementInt(myInt);
+    printf("myInt: %d \n",myInt);
+    printf("pMyInt: %d\n\n",*pMyInt);
+    
+    //z pointerjem lahko dejansko  spremenimo spremenljivko, ker
+    //spreminjamo kar je na pMyInt naslovu
+    incrementIntPtr(pMyInt);
+    printf("myInt: %d \n",myInt);
+    printf("pMyInt: %d",*pMyInt);
+    return 0;
+}
